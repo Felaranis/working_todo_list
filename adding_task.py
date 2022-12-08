@@ -1,4 +1,5 @@
 from datetime import datetime
+from helpers.all_functions import prior
 
 all_tasks = []
 
@@ -11,13 +12,8 @@ def add_task():
     task["description"] = input("Provide us with a detailed explanation of the task\n")
     if not task["description"]:
         task["description"] = user_title_input
-    while True:
-        try:
-            task["priority"] = int(input("Please choose a priority from 1 to 10\n"))
-        except ValueError:
-            continue
-        if task["priority"] >= 1 or task["priority"] <= 10:
-            break
+    task["priority"] = prior()
+        
 
     choose_date = input("Please choose a completion due date in the following format: Year/Month/Day, Hours:Minutes\n")
     time_format = "%Y/%m/%d, %H:%M"
