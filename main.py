@@ -1,6 +1,6 @@
 from data_file.funclist import *
 from helpers.test_prog import TEST_DATA
-from helpers.task_search import task_search
+from helpers.all_functions import task_search
 import os
 import json
 
@@ -26,7 +26,7 @@ def dump_json(path, add_list):
 
 # dump_json(path, TEST_DATA)
 TODO_LIST = read_json(path)
-print(TODO_LIST)
+print(type(TODO_LIST))
 task_search(TODO_LIST)
 
 

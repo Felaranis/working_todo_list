@@ -34,7 +34,8 @@ from all_functions import *
 # Переглянути виконані справи (тільки назви)
 def completed_task(task_list):
     """Checking if the task was completed and return the title of completed task"""
-    
+    if not task_list:
+        return print("No task created")
     for task in task_list:
         if task['done'] == True:
             print(task["title"])
