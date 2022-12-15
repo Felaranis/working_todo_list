@@ -1,23 +1,36 @@
 from data_file.funclist import *
+from helpers.test_prog import TEST_DATA
+from helpers.task_search import task_search
 import os
 import json
+
+TODO_LIST = []
 
 path = os.path.join(os.getcwd(), "data_file", "tasks.json")
 print(path)
 
-TODO_LIST = []
+def read_json(path):
+    is_file = os.path.isfile(path)
+    if is_file == True:
+        with open(path, "r") as file:
+            try:
+                our_file = json.load(file)
+                return our_file
+            except json.JSONDecodeError:
+                print("Something wrong with file")
+                return []
 
-is_file = os.path.isfile(path)
-if is_file == True:
-    with open(path, "r") as file:
-        try:
-            our_file = json.load(file)
-            TODO_LIST = our_file
-        except json.JSONDecodeError:
-            print("There is no information in this file")
+def dump_json(path, add_list):
+    with open(path, "w") as file:
+        json.dump(add_list, file)
 
-    
+# dump_json(path, TEST_DATA)
+TODO_LIST = read_json(path)
+print(TODO_LIST)
+task_search(TODO_LIST)
 
+
+ 
 
 # json.JSONDecodeError
 
