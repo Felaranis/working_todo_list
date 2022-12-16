@@ -6,6 +6,8 @@ from all_functions import print_task, task_search
 def task_completed(task_list):
 
     """This func would ask user to input task's name and return it as completed """
+    if not task_list:
+        return print("No task created")
     task = task_search(task_list)
     task["done"] = True
     print_task(task)

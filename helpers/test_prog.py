@@ -6,7 +6,7 @@ TEST_DATA = [
         "title": "Shop",
         "description": "Grocery shopping",
         "priority": 3,
-        # "due_date": datetime(2022, 12, 7, 12, 0),
+        "due_date": datetime(2022, 12, 7, 12, 0),
         "done": False
     },
     {
@@ -14,7 +14,7 @@ TEST_DATA = [
         "title": "Work",
         "description": "Go to work",
         "priority": 5,
-        # "due_date": datetime(2022, 11, 30, 12, 0),
+        "due_date": datetime(2022, 11, 30, 12, 0),
         "done": False
     },
 ]

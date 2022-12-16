@@ -1,18 +1,20 @@
 def task_search(task_list):
     ask = input("Which task would you like to review?\n").lower()
-    if not task_list:
-        return print("No task created")
     for task in task_list:
         if ask in task["title"].lower():
             return task
+    else:
+        print("No task created")
+
         
 
-def print_task(task_list):
+def print_task(task):
     """This func would print key/values in a readeable format"""
-    if not task_list:
-        return print("No task created")
-    for item in task_list:
-        print(item.title().replace("_", " ") + " : " + str(task_list[item]))
+    if task == None:
+        return 
+    for item in task:
+        print(item.title().replace("_", " ") + " : " + str(task[item]))
+
 
 def prior():
     while True:
